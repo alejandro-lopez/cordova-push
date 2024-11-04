@@ -134,9 +134,26 @@
         <source url="https://cdn.cocoapods.org/"/>
       </config>
       <pods use-frameworks="true">
+        <pod name="Firebase" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
+      </pods>
+    </podspec>
+    <podspec>
+      <config>
+        <source url="https://cdn.cocoapods.org/"/>
+      </config>
+      <pods use-frameworks="true">
+        <pod name="Firebase/Core" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
+      </pods>
+    </podspec>
+    <podspec>
+      <config>
+        <source url="https://cdn.cocoapods.org/"/>
+      </config>
+      <pods use-frameworks="true">
         <pod name="Firebase/Messaging" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
       </pods>
     </podspec>
+
   </platform>
 
 </plugin>
