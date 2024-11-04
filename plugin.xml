@@ -71,6 +71,7 @@
     <framework src="androidx.core:core:$ANDROIDX_CORE_VERSION" />
     <framework src="me.leolin:ShortcutBadger:1.1.22@aar"/>
     <framework src="com.google.firebase:firebase-messaging:$FCM_VERSION"/>
+    <framework src="com.google.firebase:firebase-iid:21.1.0"/>
 
     <source-file src="src/android/com/adobe/phonegap/push/FCMService.kt" target-dir="java/com/adobe/phonegap/push/"/>
     <source-file src="src/android/com/adobe/phonegap/push/PushConstants.kt" target-dir="java/com/adobe/phonegap/push/"/>
