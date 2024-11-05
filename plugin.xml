@@ -15,7 +15,7 @@
   <engines>
     <engine name="cordova" version=">=10.0.0"/>
     <engine name="cordova-android" version=">=12.0.0"/>
-    <!--<engine name="cordova-ios" version=">=6.0.0"/>-->
+    <engine name="cordova-ios" version=">=6.0.0"/>
   </engines>
 
   <platform name="android">
@@ -71,7 +71,6 @@
     <framework src="androidx.core:core:$ANDROIDX_CORE_VERSION" />
     <framework src="me.leolin:ShortcutBadger:1.1.22@aar"/>
     <framework src="com.google.firebase:firebase-messaging:$FCM_VERSION"/>
-    <framework src="com.google.firebase:firebase-iid:21.1.0"/>
 
     <source-file src="src/android/com/adobe/phonegap/push/FCMService.kt" target-dir="java/com/adobe/phonegap/push/"/>
     <source-file src="src/android/com/adobe/phonegap/push/PushConstants.kt" target-dir="java/com/adobe/phonegap/push/"/>
@@ -93,12 +92,13 @@
     <hook type="after_prepare" src="hooks/browser/updateManifest.js"/>
   </platform>
 
-  <!--<platform name="ios">
-    <preference name="IOS_FIREBASE_MESSAGING_VERSION" default=">= 7.4.0"/>
+  <platform name="ios">
+    <preference name="IOS_FIREBASE_MESSAGING_VERSION" default="10.24.0"/>
 
     <config-file target="config.xml" parent="/*">
       <feature name="PushNotification">
         <param name="ios-package" value="PushPlugin"/>
+        <param name="onload" value="true"/>
       </feature>
     </config-file>
 
@@ -116,12 +116,12 @@
       <string>production</string>
     </config-file>
 
-    <source-file src="src/ios/AppDelegate+notification.m"/>
+    <source-file src="src/ios/CDVAppDelegate+notification.m"/>
     <source-file src="src/ios/PushPlugin.m"/>
     <source-file src="src/ios/PushPluginFCM.m"/>
     <source-file src="src/ios/PushPluginSettings.m"/>
 
-    <header-file src="src/ios/AppDelegate+notification.h"/>
+    <header-file src="src/ios/CDVAppDelegate+notification.h"/>
     <header-file src="src/ios/PushPlugin.h"/>
     <header-file src="src/ios/PushPluginFCM.h"/>
     <header-file src="src/ios/PushPluginSettings.h"/>
@@ -133,26 +133,9 @@
         <source url="https://cdn.cocoapods.org/"/>
       </config>
       <pods use-frameworks="true">
-        <pod name="Firebase" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
-      </pods>
-    </podspec>
-    <podspec>
-      <config>
-        <source url="https://cdn.cocoapods.org/"/>
-      </config>
-      <pods use-frameworks="true">
-        <pod name="Firebase/Core" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
-      </pods>
-    </podspec>
-    <podspec>
-      <config>
-        <source url="https://cdn.cocoapods.org/"/>
-      </config>
-      <pods use-frameworks="true">
         <pod name="Firebase/Messaging" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
       </pods>
     </podspec>
-
-  </platform>-->
+  </platform>
 
 </plugin>
