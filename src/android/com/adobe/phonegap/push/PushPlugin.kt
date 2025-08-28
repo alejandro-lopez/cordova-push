@@ -507,7 +507,7 @@ class PushPlugin : CordovaPlugin() {
         Log.e(TAG, formatLogMessage("JSON Exception ${e.message}"))
         callbackContext.error(e.message)
       } catch (e: IOException) {
-        Log.e(TAG, formatLogMessage("IO Exception ${e.message}"))
+        Log.e(TAG, formatLogMessage("IO Exception ${e.message} '${senderID}'"))
         callbackContext.error(e.message)
       } catch (e: NotFoundException) {
         Log.e(TAG, formatLogMessage("Resources NotFoundException Exception ${e.message}"))
